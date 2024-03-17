@@ -1,0 +1,34 @@
+﻿@model IEnumerable<CRUD.Models.User.Students>
+<h5 class="mt-5 mb-5">Available Students</h5>
+<table class="table table-striped"> 
+    <thead>
+        <tr>         
+            <th>Register Number</th>
+            <th>Name</th>
+            <th>Father Name</th>
+            <th>Mobile Number</th>
+            <th>Email</th>
+            <th>Department</th>
+            <th>Action</th>
+        </tr>
+        @foreach (var a in Model)
+        {
+            <tr>
+                <td>@a.Regno</td>
+                <td>@a.Name</td>
+                <td>@a.FatherName</td>
+                <td>@a.Mobile</td>
+                <td>@a.Email</td>
+                <td>@a.Department</td>
+                <td>
+                    <a class="btn btn-success" href="/User/EditStudents?id=@a.Id">Edit</a>
+                    <a class="btn btn-danger" href="/User/DeleteStudents?id=@a.Id">Delete</a>
+                </td>
+
+            </tr>
+        }
+       
+ 
+    </thead>
+</table>
+
